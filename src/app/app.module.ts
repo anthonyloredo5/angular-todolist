@@ -6,6 +6,12 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { TodosComponent } from './components/todos/todos.component';
 
+//import for order/sort
+import { Ng2OrderModule } from 'ng2-order-pipe';
+
+//font awesome import for icon
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,7 +19,9 @@ import { TodosComponent } from './components/todos/todos.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    Ng2OrderModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,27 +8,40 @@ import { Todo } from "./../../models/Todo";
 })
 export class TodosComponent implements OnInit {
 
+  //todo list that is looped through to present on the page
   todos: Todo[];
 
+  //variables to update using input form 
   inputTitle:string = "";
   inputDescription:string = "";
   inputDueDate:string = "";
   inputTags:string = "";
+
+  //sort variables
+  key:string = 'id';
+  reverse:boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
     this.todos = [
       {
-        title: "first Todo",
+        title: "c",
         description: "Todo descrtitip",
-        duedate: "0/12/12",
+        duedate: "c",
         tags: "Apps",
         completed: false
       },
       {
-        title: "second Todo",
+        title: "a",
         description: "Todo descrtitip",
+        duedate: "a",
+        tags: "Apps",
+        completed: false
+      },
+      {
+        title: "b",
+        description: "b",
         duedate: "0/12/12",
         tags: "Apps",
         completed: false
@@ -63,6 +76,11 @@ export class TodosComponent implements OnInit {
     this.inputDueDate = "";
     this.inputTags = "";
 
+  }
+
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;
   }
 
 }

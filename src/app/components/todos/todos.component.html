@@ -30,15 +30,36 @@
         />
         <input type="submit" value="Save Todo" class="todo-submit">
     </form>
+    <!-- <table class="table table-bordered id">
+        <thead>
+            <tr>
+                <th class="id">id</th>
+                <th class="title">title</th>
+                <th class="description">description</th>
+                <th class="duedate">duedate</th>
+                <th class="tags">tags</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let todo of todos | orderBy: key: reverse"  class="todo {{ (todo.completed ? 'done' : '') }}">
+                <td class="id">{{todo.index}}</td>
+                <td class="title" (click)="toggleDone(i)">{{ todo.title }}</td>
+                <td class="description">{{ todo.description }}</td>
+                <td class="duedate">{{ todo.duedate }}</td>
+                <td class="tags">{{ todo.tags }}</td>
+                <button class="delete" (click)="deleteTodo(i)">Remove</button>
+            </tr>
+        </tbody>
+    </table> -->
     <div class="todo">
         <div class="id">id</div>
-        <div class="title">Title</div>
+        <div class="title" (click)="sort('title')">Title&nbsp;<i class="fa fa-sort"></i></div>
         <div class="description">Description</div>
-        <div class="duedate">Due-Date</div>
+        <div class="duedate" (click)="sort('duedate')">Due-Date</div>
         <div class="tags">Tags</div>
     </div>
-    <div *ngFor="let todo of todos; let i = index;"  class="todo {{ (todo.completed ? 'done' : '') }}">
-        <div class="id">{{ i }}</div>
+    <div *ngFor="let todo of todos | orderBy: key: reverse"  class="todo {{ (todo.completed ? 'done' : '') }}">
+        <div class="id">{{ todo.index }}</div>
         <div class="title" (click)="toggleDone(i)">{{ todo.title }}</div>
         <div class="description">{{ todo.description }}</div>
         <div class="duedate">{{ todo.duedate }}</div>
