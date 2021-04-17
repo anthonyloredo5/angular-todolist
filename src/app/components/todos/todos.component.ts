@@ -10,19 +10,28 @@ export class TodosComponent implements OnInit {
 
   todos: Todo[];
 
-  inputTodo:string = "";
+  inputTitle:string = "";
+  inputDescription:string = "";
+  inputDueDate:string = "";
+  inputTags:string = "";
 
   constructor() { }
 
   ngOnInit(): void {
     this.todos = [
       {
-        content: 'First Todo',
+        title: "first Todo",
+        description: "Todo descrtitip",
+        duedate: "0/12/12",
+        tags: "Apps",
         completed: false
       },
       {
-        content: 'Second Todo',
-        completed: true
+        title: "second Todo",
+        description: "Todo descrtitip",
+        duedate: "0/12/12",
+        tags: "Apps",
+        completed: false
       },
     ]
   }
@@ -42,11 +51,17 @@ export class TodosComponent implements OnInit {
 
   addTodo () {
     this.todos.push({
-      content: this.inputTodo,
+      title: this.inputTitle,
+      description: this.inputDescription,
+      duedate: this.inputDueDate,
+      tags: this.inputTags,
       completed: false
     })
     
-    this.inputTodo = "";
+    this.inputTitle = "";
+    this.inputDescription = "";
+    this.inputDueDate = "";
+    this.inputTags = "";
 
   }
 

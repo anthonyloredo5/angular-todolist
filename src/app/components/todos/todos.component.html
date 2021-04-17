@@ -2,16 +2,47 @@
     <form (submit)="addTodo()">
         <input 
             type="text"
-            name="inputTodo"
-            placeholder="Create Todo"
+            name="inputTitle"
+            placeholder="Todo Title"
             class="todo-input"
-            [(ngModel)]="inputTodo"
+            [(ngModel)]="inputTitle"
+        />
+        <input 
+            type="text"
+            name="inputDescription"
+            placeholder="Todo Description"
+            class="todo-input"
+            [(ngModel)]="inputDescription"
+        />
+        <input 
+            type="text"
+            name="inputDueDate"
+            placeholder="Todo Due Date"
+            class="todo-input"
+            [(ngModel)]="inputDueDate"
+        />
+        <input 
+            type="text"
+            name="inputTags"
+            placeholder="Todo Tags"
+            class="todo-input"
+            [(ngModel)]="inputTags"
         />
         <input type="submit" value="Save Todo" class="todo-submit">
     </form>
+    <div class="todo">
+        <div class="id">id</div>
+        <div class="title">Title</div>
+        <div class="description">Description</div>
+        <div class="duedate">Due-Date</div>
+        <div class="tags">Tags</div>
+    </div>
     <div *ngFor="let todo of todos; let i = index;"  class="todo {{ (todo.completed ? 'done' : '') }}">
         <div class="id">{{ i }}</div>
-        <div class="content" (click)="toggleDone(i)">{{ todo.content }}</div>
+        <div class="title" (click)="toggleDone(i)">{{ todo.title }}</div>
+        <div class="description">{{ todo.description }}</div>
+        <div class="duedate">{{ todo.duedate }}</div>
+        <div class="tags">{{ todo.tags }}</div>
         <button class="delete" (click)="deleteTodo(i)">Remove</button>
     </div>
 </div>

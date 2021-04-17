@@ -14,14 +14,38 @@
 }
 
 .todo .id {
-	flex: 1 1 50px;
+	flex: 1 1 100%;
 }
 
 .todo .content {
 	flex: 1 1 100%;
 }
 
+.todo .title {
+	flex: 1 1 100%;
+}
+
+.todo .description {
+	flex: 1 1 100%;
+}
+
+.todo .duedate {
+	flex: 1 1 100%;
+}
+
+.todo .tags {
+	flex: 1 1 100%;
+}
+
 .todo.done .content {
+	text-decoration: line-through;
+}
+
+.todo.done .title {
+	text-decoration: line-through;
+}
+
+.todo.done {
 	text-decoration: line-through;
 }
 

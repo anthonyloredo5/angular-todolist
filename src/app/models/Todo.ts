@@ -1,4 +1,7 @@
 export class Todo {
-    content: string;
+    title: string;
+    description: string;
+    duedate: string;
+    tags: string;
     completed: boolean;
 }
