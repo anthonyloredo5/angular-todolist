@@ -19,29 +19,29 @@ export class TodosComponent implements OnInit {
 
   //sort variables
   key:string = 'id';
-  reverse:boolean = false;
+  reverse:boolean = true;
 
   constructor() { }
 
   ngOnInit(): void {
     this.todos = [
       {
-        title: "c",
+        title: "G",
         description: "Todo descrtitip",
-        duedate: "c",
+        duedate: "G",
         tags: "Apps",
         completed: false
       },
       {
-        title: "a",
+        title: "A",
         description: "Todo descrtitip",
         duedate: "a",
         tags: "Apps",
         completed: false
       },
       {
-        title: "b",
-        description: "b",
+        title: "H",
+        description: "H",
         duedate: "0/12/12",
         tags: "Apps",
         completed: false
@@ -64,7 +64,7 @@ export class TodosComponent implements OnInit {
 
   addTodo () {
     this.todos.push({
-      title: this.inputTitle,
+      title: this.inputTitle.charAt(0).toLocaleUpperCase() + this.inputTitle.slice(1),
       description: this.inputDescription,
       duedate: this.inputDueDate,
       tags: this.inputTags,

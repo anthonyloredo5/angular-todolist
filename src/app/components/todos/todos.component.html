@@ -51,19 +51,19 @@
             </tr>
         </tbody>
     </table> -->
-    <div class="todo">
-        <div class="id">id</div>
-        <div class="title" (click)="sort('title')">Title&nbsp;<i class="fa fa-sort"></i></div>
-        <div class="description">Description</div>
-        <div class="duedate" (click)="sort('duedate')">Due-Date</div>
-        <div class="tags">Tags</div>
-    </div>
-    <div *ngFor="let todo of todos | orderBy: key: reverse"  class="todo {{ (todo.completed ? 'done' : '') }}">
-        <div class="id">{{ todo.index }}</div>
-        <div class="title" (click)="toggleDone(i)">{{ todo.title }}</div>
-        <div class="description">{{ todo.description }}</div>
-        <div class="duedate">{{ todo.duedate }}</div>
-        <div class="tags">{{ todo.tags }}</div>
-        <button class="delete" (click)="deleteTodo(i)">Remove</button>
+    <div class="row-lg-12">
+        <div class="todo col-md-6">
+            <div class="title" (click)="sort('title')">Title&nbsp;<i class="fa fa-sort"></i></div>
+            <div class="description">Description</div>
+            <div class="duedate" (click)="sort('duedate')">Due-Date</div>
+            <div class="tags">Tags</div>
+        </div>
+        <div *ngFor="let todo of todos | orderBy: key: reverse"  class="col-md-6 todo {{ (todo.completed ? 'done' : '') }}">
+            <div class="title" (click)="toggleDone(i)">{{ todo.title }}</div>
+            <div class="description">{{ todo.description }}</div>
+            <div class="duedate">{{ todo.duedate }}</div>
+            <div class="tags">{{ todo.tags }}</div>
+            <button class="delete" (click)="deleteTodo(i)">Remove</button>
+        </div>
     </div>
 </div>
