@@ -1,36 +1,15 @@
-<div class="todos">
-    <form (submit)="addTodo()">
-        <input 
-            type="text"
-            name="inputTitle"
-            placeholder="Todo Title"
-            class="todo-input"
-            [(ngModel)]="inputTitle"
-        />
-        <input 
-            type="text"
-            name="inputDescription"
-            placeholder="Todo Description"
-            class="todo-input"
-            [(ngModel)]="inputDescription"
-        />
-        <input 
-            type="text"
-            name="inputDueDate"
-            placeholder="Todo Due Date"
-            class="todo-input"
-            [(ngModel)]="inputDueDate"
-        />
-        <input 
-            type="text"
-            name="inputTags"
-            placeholder="Todo Tags"
-            class="todo-input"
-            [(ngModel)]="inputTags"
-        />
-        <input type="submit" value="Save Todo" class="todo-submit">
-    </form>
-    <!-- <table class="table table-bordered id">
+<div class="todos container">
+    <div class="row">
+        <form (submit)="addTodo()" class="col-sm">
+            <input type="text" name="inputTitle" placeholder="Todo Title" class="todo-input" [(ngModel)]="inputTitle" />
+            <input type="text" name="inputDescription" placeholder="Todo Description" class="todo-input"
+                [(ngModel)]="inputDescription" />
+            <input type="text" name="inputDueDate" placeholder="Todo Due Date" class="todo-input"
+                [(ngModel)]="inputDueDate" />
+            <input type="text" name="inputTags" placeholder="Todo Tags" class="todo-input" [(ngModel)]="inputTags" />
+            <input type="submit" value="Save Todo" class="todo-submit">
+        </form>
+        <!-- <table class="table table-bordered id">
         <thead>
             <tr>
                 <th class="id">id</th>
@@ -51,19 +30,20 @@
             </tr>
         </tbody>
     </table> -->
-    <div class="row-lg-12">
-        <div class="todo col-md-6">
-            <div class="title" (click)="sort('title')">Title&nbsp;<i class="fa fa-sort"></i></div>
-            <div class="description">Description</div>
-            <div class="duedate" (click)="sort('duedate')">Due-Date</div>
-            <div class="tags">Tags</div>
-        </div>
-        <div *ngFor="let todo of todos | orderBy: key: reverse"  class="col-md-6 todo {{ (todo.completed ? 'done' : '') }}">
-            <div class="title" (click)="toggleDone(i)">{{ todo.title }}</div>
-            <div class="description">{{ todo.description }}</div>
-            <div class="duedate">{{ todo.duedate }}</div>
-            <div class="tags">{{ todo.tags }}</div>
-            <button class="delete" (click)="deleteTodo(i)">Remove</button>
+        <div class="col-sm">
+            <div class="todo">
+                <div class="title" (click)="sort('title')">Title&nbsp;<i class="fa fa-sort"></i></div>
+                <div class="description">Description</div>
+                <div class="duedate" (click)="sort('duedate')">Due-Date</div>
+                <div class="tags">Tags <input type="text" name="inputTagsSearch" placeholder="Search Tags" class="" [(ngModel)]="inputTagsSearch" (ngModelChange)="Search()"/></div>
+            </div>
+            <div *ngFor="let todo of todos | orderBy: key: reverse" class="todo {{ (todo.completed ? 'done' : '') }}">
+                <div class="title" (click)="toggleDone(i)">{{ todo.title }}</div>
+                <div class="description">{{ todo.description }}</div>
+                <div class="duedate">{{ todo.duedate }}</div>
+                <div class="tags">{{ todo.tags }}</div>
+                <button class="delete" (click)="deleteTodo(i)">Remove</button>
+            </div>
         </div>
     </div>
 </div>

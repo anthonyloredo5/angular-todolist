@@ -8,6 +8,7 @@ import { TodosComponent } from './components/todos/todos.component';
 
 //import for order/sort
 import { Ng2OrderModule } from 'ng2-order-pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 //font awesome import for icon
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
@@ -21,7 +22,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
     BrowserModule,
     FormsModule,
     Ng2OrderModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    Ng2SearchPipeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

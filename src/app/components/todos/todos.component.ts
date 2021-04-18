@@ -17,6 +17,9 @@ export class TodosComponent implements OnInit {
   inputDueDate:string = "";
   inputTags:string = "";
 
+  //var for tag search
+  inputTagsSearch:string = "";
+
   //sort variables
   key:string = 'id';
   reverse:boolean = true;
@@ -81,6 +84,16 @@ export class TodosComponent implements OnInit {
   sort(key){
     this.key = key;
     this.reverse = !this.reverse;
+  }
+
+  Search(){
+    if (this.inputTagsSearch == ""){
+      this.ngOnInit();
+    }else {
+      this.todos = this.todos.filter(res => {
+        return res.tags.toLocaleLowerCase().match(this.inputTagsSearch.toLocaleLowerCase());
+      })
+    }
   }
 
 }
