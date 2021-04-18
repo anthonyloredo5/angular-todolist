@@ -35,7 +35,7 @@
                 <div class="title" (click)="sort('title')">Title&nbsp;<i class="fa fa-sort"></i></div>
                 <div class="description">Description</div>
                 <div class="duedate" (click)="sort('duedate')">Due-Date</div>
-                <div class="tags">Tags <input type="text" name="inputTagsSearch" placeholder="Search Tags" class="" [(ngModel)]="inputTagsSearch" (ngModelChange)="Search()"/></div>
+                <div class="tags">Tags <input type="text" name="inputTagsSearch" placeholder="Search Tags" class="" [(ngModel)]="inputTagsSearch" (ngModelChange)="search()"/></div>
             </div>
             <div *ngFor="let todo of todos | orderBy: key: reverse" class="todo {{ (todo.completed ? 'done' : '') }}">
                 <div class="title" (click)="toggleDone(i)">{{ todo.title }}</div>

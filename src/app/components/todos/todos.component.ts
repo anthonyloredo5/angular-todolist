@@ -32,21 +32,21 @@ export class TodosComponent implements OnInit {
         title: "G",
         description: "Todo descrtitip",
         duedate: "G",
-        tags: "Apps",
+        tags: "cars, coffee, cake",
         completed: false
       },
       {
         title: "A",
         description: "Todo descrtitip",
         duedate: "a",
-        tags: "Apps",
+        tags: "apples, banna",
         completed: false
       },
       {
         title: "H",
         description: "H",
         duedate: "0/12/12",
-        tags: "Apps",
+        tags: "cake, apples",
         completed: false
       },
     ]
@@ -86,7 +86,7 @@ export class TodosComponent implements OnInit {
     this.reverse = !this.reverse;
   }
 
-  Search(){
+  search(){
     if (this.inputTagsSearch == ""){
       this.ngOnInit();
     }else {
