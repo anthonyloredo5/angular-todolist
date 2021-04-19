@@ -29,7 +29,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ### Screenshots
 
-![Screenshots](http://full/path/to/img.jpg)
+![Screenshots](https://github.com/anthonyloredo5/angular-todolist/blob/main/src/assets/Screen%20Shot%202021-04-19%20at%205.17.46%20AM.png?raw=true)
 
 # Usefull information
 ```
