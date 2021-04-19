@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Todo } from "./../../models/Todo";
+import  *  as  data  from  './todos.json';
 
 @Component({
   selector: 'app-todos',
@@ -7,9 +8,10 @@ import { Todo } from "./../../models/Todo";
   styleUrls: ['./todos.component.css']
 })
 export class TodosComponent implements OnInit {
+  constructor() {}
 
   //todo list that is looped through to present on the page
-  todos: Todo[];
+  todos: Todo[] = (data as any).default;
 
   //variables to update using input form 
   inputTitle:string = "";
@@ -24,32 +26,13 @@ export class TodosComponent implements OnInit {
   key:string = 'id';
   reverse:boolean = true;
 
-  constructor() { }
-
   ngOnInit(): void {
-    this.todos = [
-      {
-        title: "G",
-        description: "Todo descrtitip",
-        duedate: "G",
-        tags: "cars, coffee, cake",
-        completed: false
-      },
-      {
-        title: "A",
-        description: "Todo descrtitip",
-        duedate: "a",
-        tags: "apples, banna",
-        completed: false
-      },
-      {
-        title: "H",
-        description: "H",
-        duedate: "0/12/12",
-        tags: "cake, apples",
-        completed: false
-      },
-    ]
+    this.todos = (data as any).default;
+    console.log(this.todos);
+    
+    // this.rs.getTodos().subscribe((response) => {
+    //   this.todos = response;
+    // })
   }
 
   toggleDone (id:number) {
@@ -61,8 +44,9 @@ export class TodosComponent implements OnInit {
     })
   }
 
-  deleteTodo (id:number) {
-    this.todos = this.todos.filter((val, i) => i !== id)
+  deleteTodo (obj) {
+    console.log(obj, "is obj");
+    this.todos = this.todos.filter(item => item !== obj)
   }
 
   addTodo () {
@@ -73,6 +57,10 @@ export class TodosComponent implements OnInit {
       tags: this.inputTags,
       completed: false
     })
+    
+    var due = this.inputDueDate;
+    console.log(due);
+    
     
     this.inputTitle = "";
     this.inputDescription = "";
